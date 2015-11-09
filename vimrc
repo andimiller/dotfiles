@@ -16,24 +16,18 @@ call neobundle#begin(expand('/home/andi/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'oblitum/rainbow'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'airblade/vim-gitgutter'
-
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+NeoBundle 'tpope/vim-fugitive'      " git support
+NeoBundle 'ctrlpvim/ctrlp.vim'      " codebase search
+NeoBundle 'flazz/vim-colorschemes'  " extra themes
+NeoBundle 'davidhalter/jedi-vim'    " python integration
+NeoBundle 'derekwyatt/vim-scala'    " scala integration
+NeoBundle 'Valloric/YouCompleteMe'  " autocompletion for a lot of languages
+NeoBundle 'oblitum/rainbow'         " rainbow braces
+NeoBundle 'fatih/vim-go'            " go integration
+NeoBundle 'bling/vim-airline'       " status bar
+NeoBundle 'tpope/vim-surround'      " command to surround selection with text
+NeoBundle 'tpope/vim-commentary'    " command to comment out stuff
+NeoBundle 'airblade/vim-gitgutter'  " git gutter
 
 " Required:
 call neobundle#end()
