@@ -27,6 +27,7 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'oblitum/rainbow'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'tpope/vim-surround'
 
 
 " You can specify revision/branch/tag.
