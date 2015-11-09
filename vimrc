@@ -28,6 +28,8 @@ NeoBundle 'oblitum/rainbow'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'airblade/vim-gitgutter'
 
 
 " You can specify revision/branch/tag.
@@ -75,6 +77,7 @@ let g:rainbow_active = 1
 " Keymaps
 nnoremap <F2> :set nu!<CR>
 nnoremap <F3> :set paste!<CR>
+nnoremap <F4> :GitGutterToggle<CR>
 au FileType tex map <F5> :w<CR> :exec "!pdflatex %"<CR> :exec "!pdflatex %"<CR><CR>
 au FileType python map <F5> :w<CR> :exec "!python %"<CR>
 nmap <F8> :TagbarToggle<CR>
