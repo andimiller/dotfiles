@@ -1,51 +1,45 @@
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-  " Required:
-  set runtimepath+=/home/andi/.vim/bundle/neobundle.vim/
-endif
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Required:
-call neobundle#begin(expand('/home/andi/.vim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " Add or remove your Bundles here:
-NeoBundle 'tpope/vim-fugitive'      " git support
-NeoBundle 'ctrlpvim/ctrlp.vim'      " codebase search
-NeoBundle 'flazz/vim-colorschemes'  " extra themes
-NeoBundle 'davidhalter/jedi-vim'    " python integration
-NeoBundle 'derekwyatt/vim-scala'    " scala integration
-NeoBundle 'Valloric/YouCompleteMe'  " autocompletion for a lot of languages
-NeoBundle 'oblitum/rainbow'         " rainbow braces
-NeoBundle 'fatih/vim-go'            " go integration
-NeoBundle 'bling/vim-airline'       " status bar
-NeoBundle 'tpope/vim-surround'      " command to surround selection with text
-NeoBundle 'tpope/vim-commentary'    " command to comment out stuff
-NeoBundle 'airblade/vim-gitgutter'  " git gutter
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'oblitum/rainbow'
+Plugin 'fatih/vim-go'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'ensime/ensime-vim'
 
-" Required:
-call neobundle#end()
 
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 " Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
 
 set nocp
 
 set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
+"set tabstop=4
+"set shiftwidth=4
+"set expandtab
 
 filetype on
 syntax on
@@ -72,8 +66,11 @@ let g:rainbow_active = 1
 nnoremap <F2> :set nu!<CR>
 nnoremap <F3> :set paste!<CR>
 nnoremap <F4> :GitGutterToggle<CR>
+nnoremap <F5> :EnTypeCheck<CR>
+
 au FileType tex map <F5> :w<CR> :exec "!pdflatex %"<CR> :exec "!pdflatex %"<CR><CR>
 au FileType python map <F5> :w<CR> :exec "!python %"<CR>
 nmap <F8> :TagbarToggle<CR>
 
 autocmd BufRead,BufNewFile *.csdl set filetype=csdl
+autocmd BufWritePost *.scala :EnTypeCheck
