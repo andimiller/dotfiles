@@ -1,6 +1,7 @@
 [user]
 	name = Andi Miller
 	email = andi@andimiller.net
+	signingkey = 3B997980
 [core]
 	editor = vim
 [merge]
@@ -12,5 +13,9 @@
     glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
     root = rev-parse --show-toplevel
     worddiff = !git diff --color | diff-highlight | less -r
+[url "git@github.com:"]
+    insteadOf = https://github.com/
 [init]
-    templatedir = ~/.git_template
+	templatedir = ~/.git_template
+[commit]
+	gpgsign = true
