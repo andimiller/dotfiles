@@ -1,0 +1,6 @@
+source ~/.vimrc
+
+map gt :Next<CR>
+map gT :prev<CR>
+map gg=G :action ReformatCode<CR>
+map gr :action Refactorings.QuickListPopupAction<CR>
